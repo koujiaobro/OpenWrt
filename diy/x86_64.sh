@@ -35,6 +35,7 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
+git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 git clone --depth=1 https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
 git clone --depth=1 https://github.com/sbwml/luci-app-xunlei package/xunlei
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
@@ -45,8 +46,7 @@ curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turbo
 rm -rf package/turboacc/nft-fullcone
 
 # upnp
-rm -rf package/net/miniupnpd
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages miniupnpd
+git_sparse_clone master https://github.com/coolsnowwolf/packages net/miniupnpd
 # iStore
 git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
 git_sparse_clone main https://github.com/linkease/istore luci
