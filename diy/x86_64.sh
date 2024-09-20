@@ -22,7 +22,6 @@ sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.
 
 # 移除要替换的包
 rm -rf feeds/luci/applications/luci-app-xunlei
-rm -rf feeds/packages/net/miniupnpd
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -45,8 +44,6 @@ git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/
 curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 rm -rf package/turboacc/nft-fullcone
 
-# upnp
-git_sparse_clone master https://github.com/coolsnowwolf/packages net/miniupnpd
 # iStore
 git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
 git_sparse_clone main https://github.com/linkease/istore luci
